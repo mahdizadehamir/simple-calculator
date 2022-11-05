@@ -7,7 +7,7 @@ const memoryMinus = document.querySelector(".memminus");
 const memoryRecall = document.querySelector(".memrecall");
 let memory = 0;
 function calculate() {
-  display.innerHTML = eval(display.innerHTML);
+  display.innerText= eval(display.innerText);
 }
 function memrecallFunc() {
   display.innerHTML = memory;
@@ -20,7 +20,7 @@ function memminusFunc() {
   memory -= +eval(display.innerHTML);
  
 }
-function clickHandler(event) {
+function showOnDisplay(event) {
   if (display.innerHTML === "0") {
     display.innerHTML = "";
   }
@@ -36,5 +36,5 @@ memoryPlus.addEventListener("click", memplusFunc);
 calculating.addEventListener("click", calculate);
 clearing.addEventListener("click", clear);
 numbBtns.forEach((element) => {
-  element.addEventListener("click", clickHandler);
+  element.addEventListener("click", showOnDisplay);
 });
